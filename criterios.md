@@ -9,6 +9,7 @@
 
 4. Se utilizan correctamente y cuando corresponda los tipos de datos y objetos predefinidos del lenguaje (Arrays, objetos planos, Map, Set, etc.)
     - ejemplo4.html: no uso de arrays
+    - ejemplo8.html: linea1, linea2... cero, uno, dos...
 
 5. Se han utilizado funciones para estructurar el código, definiendo y utilizando parámetros y valores de respuesta de forma adecuada
     - ejemplo5.html: buen uso de funciones. Ojo a los nombres (validarMail no valida el mail)
