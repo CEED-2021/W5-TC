@@ -1,0 +1,37 @@
+<body>
+  <h1>Tema 1</h1>
+  <div>
+      <h2>Apartado 1</h2>
+  </div>
+  <h2>Apartado 2</h2>
+  <h1>Tema 2</h1>
+  <h2>Introducción</h2>
+  <script>
+
+      const nuevo = document.createElement("pre");
+      document.body.appendChild(nuevo);
+      let pre = "<ul>";
+      let contadorH1 = 0;
+      let contadorH2 = 1;
+
+      for(elemento of document.body.children){
+          if(elemento.tagName == "H1"){
+              contadorH1++;
+              pre+="<li>"+contadorH1+".-"+elemento.innerText+"</li>";
+              contadorH2=1;
+
+          }else if(elemento.tagName == "H2"){
+              pre+="<li>    "+contadorH1+"."+contadorH2+".-"+elemento.innerText+"</li>";
+              contadorH2++;
+          }else if(elemento.tagName == "DIV"){
+              for(elemento2 of elemento.children){
+                      pre+="<li>    "+contadorH1+"."+contadorH2+".-"+elemento2.innerText+"</li>";
+                      contadorH2++;
+              }
+
+          }
+
+      }
+     nuevo.innerHTML=pre;
+  </script>
+</body>

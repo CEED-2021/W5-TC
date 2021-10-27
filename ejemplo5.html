@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 1 T2 W2</title>
+    </head>
+    <body>
+
+        <form name="formulario" action="www.loquesea.com" method="get">
+            <input type="email" name="mail">
+            <input type="submit" value="enviar">
+
+        </form>
+        <script>
+            function validarNombre(){
+                let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+                if(emailRegex.test(form.getElementsByTagName("input")[0].value)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function validarServidor(){
+                let servidor = form.getElementsByTagName("input")[0].value.split("@");
+                for(let i=0; i<listaServidores.length; i++){
+                    if(servidor[1] === listaServidores[i]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function validarMail(event){
+                event.preventDefault();
+
+                let nombreValido = validarNombre();
+                let servidorValido = validarServidor();
+                if(nombreValido && servidorValido){
+                    form.submit();
+                }
+
+            }
+
+            let listaServidores = ["terra.es", "myspace.com", "arrakis.es", "tuenti.es"];
+            let form = document.forms[0];
+            form.onsubmit = validarMail;
+        </script>
+    </body>
+</html>

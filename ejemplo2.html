@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="estilos.css">
+  <script>
+
+    function cambioColor(nombreHijo) {
+      let hijo = document.getElementById(nombreHijo);
+      let estiloHijo = window.getComputedStyle(hijo);
+      let colorHijo = estiloHijo.getPropertyValue('background-color');
+      let padre = document.getElementById('parent');
+      padre.style.backgroundColor = colorHijo;
+    }
+  </script>
+</head>
+
+<body>
+  <main>
+    <div id="parent">
+      <div onclick="cambioColor('child1')" id="child1" class="child"></div>
+      <div onclick="cambioColor('child2')" id="child2" class="child"></div>
+      <div onclick="cambioColor('child3')" id="child3" class="child"></div>
+    </div>
+  </main>
+
+</body>
+
+</html>

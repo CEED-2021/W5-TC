@@ -1,0 +1,47 @@
+</head>
+
+<body>
+  <!--<p ondblclick="borrar(event)" onclick="ocultar(event)" id="parrafo1">Párrafo 1</p><br>
+<p ondblclick="borrar(event)" onclick="ocultar(event)" id="parrafo2">Párrafo 2</p><br>
+<p ondblclick="borrar(event)" onclick="ocultar(event)" id="parrafo3">Párrafo 3</p><br>-->
+
+  <p id="parrafo1">Párrafo 1</p><br>
+  <p id="parrafo2">Párrafo 2</p><br>
+  <p id="parrafo3">Párrafo 3</p><br>
+  <button onclick="reset()">Resetear</button>
+</body>
+<script>
+
+  parrafo1 = document.getElementById('parrafo1');
+  parrafo2 = document.getElementById('parrafo2');
+  parrafo3 = document.getElementById('parrafo3');
+
+  parrafo1.addEventListener("click", ocultar);
+  parrafo2.addEventListener("click", ocultar);
+  parrafo3.addEventListener("click", ocultar);
+
+  parrafo1.addEventListener("dblclick", borrar, { capture: true });
+  parrafo2.addEventListener("dblclick", borrar, { capture: true });
+  parrafo3.addEventListener("dblclick", borrar, { capture: true });
+
+  function ocultar(evento) {
+    console.log("Ocultar " + evento.target);
+    let parrafo = evento.target;
+    setTimeout(function () { parrafo.style.display = "none" }, 500);
+  }
+
+  function borrar(evento) {
+    console.log("Borrar " + evento.target)
+    let parrafo = evento.target;
+    parrafo.remove();
+  }
+
+  function reset() {
+    parrafo1.style.display = "block";
+    parrafo2.style.display = "block";
+    parrafo3.style.display = "block";
+  }
+
+</script>
+
+</html>
